@@ -1,1 +1,29 @@
 /* All styles for your header Components live here */
+.header{
+    display: flex;
+    padding: 5px;
+}
+
+.headercontent{
+    font-size: 14px;
+    padding: 0 0 0 5px;
+}
+
+.headertitle{
+    padding: 10px 0 10px 5px;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.date{
+    padding-left: 8px;
+    font-size: 14px;
+    color: gray;
+}
+
+.image{
+    width: 50px;
+    padding: 2px;
+}

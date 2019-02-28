@@ -3,8 +3,8 @@ import './Card.css';
 
 const CardBanner = () => {
     return (
-      <div className="CardBanner">
-
+      <div className="cardbanner">
+       
       </div>
     );
   };

@@ -41,8 +41,8 @@ const numButton = [
 
 const actionButton = [
     {
-        symbol: "%",
-        style: "redsingle"
+        style: "redsingle",
+        symbol: "÷"
     },{
         symbol: "X",
         style: "redsingle"
@@ -60,7 +60,7 @@ const actionButton = [
 
 const ClearButton =
     {
-        symbol: "Clear",
+        symbol: "clear",
         style: "whitetriple"
     }
 

@@ -1,0 +1,25 @@
+.numberbuttons{
+    display: flex;
+    width: 306px;
+    flex-wrap: wrap;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whitetriple{
+    width: 300px;
+    height: 100px;
+    border: 1px solid gray;
+}
+
+.whitesingle{
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+}

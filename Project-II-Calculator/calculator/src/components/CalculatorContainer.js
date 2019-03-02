@@ -3,6 +3,7 @@ import './ButtonComponents/Button.css';
 
 import NumberButton from './ButtonComponents/NumberButton';
 import ActionButton from './ButtonComponents/ActionButton';
+import CalculatorDisplay from './DisplayComponents/CalculatorDisplay';
 
 const numButton = [
     {
@@ -38,14 +39,54 @@ const numButton = [
     }
   ]
 
+const actionButton = [
+    {
+        symbol: "%",
+        style: "redsingle"
+    },{
+        symbol: "X",
+        style: "redsingle"
+    },{
+        symbol: "-",
+        style: "redsingle"
+    },{
+        symbol: "+",
+        style: "redsingle"
+    },{
+        symbol: "=",
+        style: "redsingle"
+    }
+]
+
+const ClearButton =
+    {
+        symbol: "Clear",
+        style: "whitetriple"
+    }
+
 const CalculatorContainer = () => {
   return (
-    <div className="numberbuttons">
-        {
-            numButton.map(number => (
-                <NumberButton button={number} />
-            ))
-        }
+    <div className="fullcontainer">
+        <CalculatorDisplay />
+        <div className="leftside">
+            <ActionButton button={ClearButton} />
+            <div className="numberbuttons">
+                {
+                    numButton.map(number => (
+                        <NumberButton button={number} key={number.text}/>
+                    ))
+                }
+            </div>
+        </div>
+        <div className="rightside">
+            <div className="actionbuttons">
+                {
+                    actionButton.map(action => (
+                        <ActionButton button={action} key={action.symbol}/>
+                    ))
+                }
+            </div>
+        </div>
     </div>
   );
 };

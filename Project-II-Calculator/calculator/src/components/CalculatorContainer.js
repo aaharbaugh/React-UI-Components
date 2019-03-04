@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './ButtonComponents/Button.css';
 
 import NumberButton from './ButtonComponents/NumberButton';
@@ -64,31 +64,50 @@ const ClearButton =
         style: "whitetriple"
     }
 
-const CalculatorContainer = () => {
-  return (
-    <div className="fullcontainer">
-        <CalculatorDisplay />
-        <div className="leftside">
-            <ActionButton button={ClearButton} />
-            <div className="numberbuttons">
-                {
-                    numButton.map(number => (
-                        <NumberButton button={number} key={number.text}/>
-                    ))
-                }
+class CalculatorContainer extends Component {
+    state = { count: '', previousCount: '' }
+
+    addToString = e => {
+        e.persist();
+        this.setState(prevState =>  ({ count: prevState.count + e.target.value}));
+    }
+
+    clearPress = e => {
+        e.persist();
+        this.setState({count: ''})
+    }
+
+    symbolPress = e => {
+
+    }
+  
+    render(){
+        const { count } = this.state;
+        return (
+            <div className="fullcontainer">
+                <CalculatorDisplay count={count}/>
+                <div className="leftside">
+                    <ActionButton clickHandler={this.clearPress} button={ClearButton} />
+                    <div className="numberbuttons">
+                        {
+                            numButton.map(number => (
+                                <NumberButton clickHandler={this.addToString} button={number} key={number.text}/>
+                            ))
+                        }
+                    </div>
+                </div>
+                <div className="rightside">
+                    <div className="actionbuttons">
+                        {
+                            actionButton.map(action => (
+                                <ActionButton button={action} key={action.symbol}/>
+                            ))
+                        }
+                    </div>
+                </div>
             </div>
-        </div>
-        <div className="rightside">
-            <div className="actionbuttons">
-                {
-                    actionButton.map(action => (
-                        <ActionButton button={action} key={action.symbol}/>
-                    ))
-                }
-            </div>
-        </div>
-    </div>
-  );
-};
+    )
+    }
+}
 
 export default CalculatorContainer;

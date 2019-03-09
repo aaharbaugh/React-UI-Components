@@ -1,0 +1,13 @@
+.display{
+    width: 408px;
+    border: 1px solid gray;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 32px;
+    height: 100px;
+    align-items: center;
+}

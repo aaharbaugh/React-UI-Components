@@ -1,0 +1,47 @@
+.fullcontainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 410px;
+}
+
+.numberbuttons{
+    display: flex;
+    width: 306px;
+    flex-wrap: wrap;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.button:hover{
+    background-color: gray;
+    border: 1px solid black;
+    color: white;
+}
+
+.whitetriple{
+    width: 304px;
+    height: 80px;
+    border: 1px solid gray;
+    font-weight: 400;
+}
+
+.whitesingle{
+    width: 100px;
+    height: 80px;
+    border: 1px solid gray;
+}
+
+.redsingle{
+    background-color: rgb(175, 2, 2);
+    color: white;
+    width: 100px;
+    height: 80px;
+    border: 1px solid gray;
+}
